@@ -18,6 +18,11 @@
 .first_image p {
   padding-top: 10px;
 }
+.border{
+  width: 46%;
+  margin: 0 auto;
+  text-align: center;
+}
 
 .section-2-container {
   display: flex;
@@ -197,7 +202,7 @@
 .com_details {
   display: inline-block;
   float: left;
-  width: 55%;
+  width: 30%;
   padding: 30px;
   margin: 30px;
 }
@@ -235,4 +240,11 @@
   display: inline-block;
   text-align: center;
   margin: 0 auto;
+}
+.footer_border{
+
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+
 }
