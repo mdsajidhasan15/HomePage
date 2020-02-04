@@ -5,6 +5,8 @@
 .first_image {
   background-image: url("../images/img1.jpg");
   background-repeat: no-repeat;
+  position: relative;
+  clear: both;
   width: 100%;
   height: 250px;
   background-size: 100%;
@@ -13,7 +15,7 @@
   text-align: center;
 }
 .first_image h1 {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 .first_image p {
   padding-top: 10px;
@@ -22,6 +24,14 @@
   width: 46%;
   margin: 0 auto;
   text-align: center;
+}
+.container_001{
+  width: 50%;
+  margin: 0 auto;
+   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .section-2-container {
@@ -32,41 +42,36 @@
 }
 
 @media only screen and (max-width: 1860px) {
-  .up_box,
-  .down_box {
+  .box {
     width: 60% !important;
   }
 }
 
 @media only screen and (max-width: 1550px) {
-  .up_box,
-  .down_box {
+  .box {
     width: 70% !important;
   }
 }
 
 @media only screen and (max-width: 1330px) {
-  .up_box,
-  .down_box {
+  .box {
     width: 80% !important;
   }
 }
 
 @media only screen and (max-width: 1163px) {
-  .up_box,
-  .down_box {
+  .box {
     width: 90% !important;
   }
 }
 
-.up_box,
-.down_box {
-  width: 50%;
+.box {
+  /*width: 50%;*/
   display: inline-block;
-  /* margin: 0 auto; */
+   margin: 0 auto; 
 }
 
-.box1 {
+.a {
   display: inline-block;
   width: 250px;
   text-align: center;
@@ -74,7 +79,7 @@
   padding: 10px;
   background-color: #e0f2f7;
 }
-.box2 {
+.b {
   display: inline-block;
   width: 250px;
   float: left;
@@ -83,7 +88,34 @@
   padding: 10px;
   background-color: #e0f2f7;
 }
-.box3 {
+.c {
+  display: inline-block;
+  width: 250px;
+  float: left;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  background-color: #e0f2f7;
+}
+.d {
+  display: inline-block;
+  width: 250px;
+  /*float: left;*/
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  background-color: #e0f2f7;
+}
+.e {
+  display: inline-block;
+  width: 250px;
+  float: left;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  background-color: #e0f2f7;
+}
+.f {
   display: inline-block;
   width: 250px;
   float: left;
@@ -100,7 +132,7 @@
 	width: 100%;
 	height: 40%;}*/
 
-.box_001 {
+.body {
   background-image: url("../images/img2.jpg");
   background-repeat: no-repeat;
   height: 200px;
@@ -112,10 +144,10 @@
   margin-top: 20px;
 }
 
-.box_001 h2 {
+.body h2 {
   padding-top: 60px;
 }
-.box_001 p {
+.body p {
   padding-top: 20px;
 }
 
