@@ -20,15 +20,15 @@
 .first_image p {
   padding-top: 10px;
 }
-.border{
+.border {
   width: 46%;
   margin: 0 auto;
   text-align: center;
 }
-.container_001{
+.container_001 {
   width: 50%;
   margin: 0 auto;
-   display: flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
@@ -42,25 +42,31 @@
 }
 
 @media only screen and (max-width: 1860px) {
-  .box {
+  .container_001 {
     width: 60% !important;
   }
 }
 
 @media only screen and (max-width: 1550px) {
-  .box {
+  .container_001 {
     width: 70% !important;
   }
 }
 
 @media only screen and (max-width: 1330px) {
-  .box {
+  .container_001 {
     width: 80% !important;
   }
 }
 
 @media only screen and (max-width: 1163px) {
-  .box {
+  .container_001 {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info-box {
     width: 90% !important;
   }
 }
@@ -68,69 +74,17 @@
 .box {
   /*width: 50%;*/
   display: inline-block;
-   margin: 0 auto; 
+  margin: 0 auto;
 }
 
-.a {
+.info-box {
   display: inline-block;
-  width: 250px;
+  width: 25%;
   text-align: center;
   margin: 20px;
   padding: 10px;
   background-color: #e0f2f7;
 }
-.b {
-  display: inline-block;
-  width: 250px;
-  float: left;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  background-color: #e0f2f7;
-}
-.c {
-  display: inline-block;
-  width: 250px;
-  float: left;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  background-color: #e0f2f7;
-}
-.d {
-  display: inline-block;
-  width: 250px;
-  /*float: left;*/
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  background-color: #e0f2f7;
-}
-.e {
-  display: inline-block;
-  width: 250px;
-  float: left;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  background-color: #e0f2f7;
-}
-.f {
-  display: inline-block;
-  width: 250px;
-  float: left;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-  background-color: #e0f2f7;
-}
-
-/*.box_001{
-	background-image: url("images/img2.jpg");
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-	height: 40%;}*/
 
 .body {
   background-image: url("../images/img2.jpg");
@@ -273,10 +227,8 @@
   text-align: center;
   margin: 0 auto;
 }
-.footer_border{
-
+.footer_border {
   width: 60%;
   margin: 0 auto;
   text-align: center;
-
 }
