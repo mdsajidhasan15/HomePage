@@ -25,12 +25,14 @@
 }
 
 .border {
-    width: 46%;
+    width: 60%;
+    height: auto;
     margin: 0 auto;
     text-align: center;
 }
 
-.container_001 {
+
+/* .container_001 {
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -44,57 +46,66 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-}
+} */
 
-*/ .box {
+.box {
     /* width: 50%; */
     /* display: inline-block; */
     margin: auto;
 }
 
-@media only screen and (max-width: 1860px) {
-    .container_001 {
-        width: 60% !important;
-    }
+.info-box {
+    margin: 10px;
+    padding: 15px;
+    height: 200px;
+    width: 25%;
+    display: inline-block;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #e0f2f7;
 }
 
-@media only screen and (max-width: 1550px) {
-    .container_001 {
-        width: 70% !important;
-    }
-}
-
-@media only screen and (max-width: 1330px) {
-    .container_001 {
-        width: 80% !important;
-    }
-}
-
-@media only screen and (max-width: 1163px) {
-    .container_001 {
-        width: 90% !important;
-    }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 0px) and (max-width: 480px) {
     .info-box {
         width: 90% !important;
     }
 }
 
-.box {
-    /*width: 50%;*/
-    display: inline-block;
-    margin: 0 auto;
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+    .info-box {
+        width: 85% !important;
+    }
 }
 
-.info-box {
-    display: inline-block;
-    width: 25%;
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    background-color: #e0f2f7;
+@media only screen and (min-width: 601px) and (max-width: 840px) {
+    .info-box {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (min-width: 841px) and (max-width: 960px) {
+    .info-box {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1280px) {
+    .info-box {
+        width: 25% !important;
+    }
+}
+
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+    .info-box {
+        width: 27% !important;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .info-box {
+        width: 25% !important;
+    }
 }
 
 .body {
