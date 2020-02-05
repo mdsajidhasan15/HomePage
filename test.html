@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test-container {
+            margin: auto;
+        }
+
+        .inner-box {
+            margin: 10px;
+            height: 150px;
+            width: 28%;
+            display: inline-block;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-color: black;
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 480px) {
+            .inner-box {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (min-width: 481px) and (max-width: 600px) {
+            .inner-box {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (min-width: 601px) and (max-width: 840px) {
+            .inner-box {
+                width: 45%;
+            }
+        }
+
+        @media only screen and (min-width: 841px) and (max-width: 960px) {}
+
+        @media only screen and (min-width: 961px) and (max-width: 1280px) {}
+
+        @media only screen and (min-width: 1281px) and (max-width: 1440px) {}
+
+        @media only screen and (min-width: 1441px) {}
+    </style>
+</head>
+
+<body>
+    <div class="test-container">
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+    </div>
+</body>
+
+</html>
