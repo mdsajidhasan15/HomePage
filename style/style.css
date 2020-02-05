@@ -4,12 +4,12 @@
 }
 
 .first_image {
-    background-image: url("../images/img1.jpg");
+    background-image: url("../images/img3.jpg");
     background-repeat: no-repeat;
     position: relative;
     clear: both;
     width: 100%;
-    height: 150px;
+    height: 200px;
     background-size: 100%;
     color: #fff;
     display: inline-block;
@@ -67,44 +67,768 @@
 }
 
 @media only screen and (min-width: 0px) and (max-width: 480px) {
+    .border {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
         width: 90% !important;
+        height: 200px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    .container {
+        width: 80% !important;
+        margin: 0 auto;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 360px !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 15px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 360px !important;
+        float: left;
+        text-align: left;
+        margin: 5px !important;
+        padding: 5px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 360px !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 600px) {
+    .border {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
-        width: 85% !important;
+        width: 90% !important;
+        height: 200px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 80% !important;
+        margin: 0 auto;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 15px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 5px !important;
+        padding: 5px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 840px) {
+    .border {
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
-        width: 75% !important;
+        width: 40% !important;
+        height: 210px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 80% !important;
+        margin: 0 auto;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 15px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 5px !important;
+        padding: 5px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 360fr !important;
+        float: left;
+        text-align: left;
+        margin: 20px;
+        padding: 10px;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 841px) and (max-width: 960px) {
+    .border {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
-        width: 60% !important;
+        width: 40% !important;
+        height: 210px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 70% !important;
+        margin: 0 auto;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 250px !important;
+        float: left;
+        text-align: left;
+        margin: 20px !important;
+        padding: 20px !important;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 15px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 250px !important;
+        float: left;
+        text-align: left;
+        margin: 20px !important;
+        padding: 20px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 250px !important;
+        float: left;
+        text-align: left;
+        margin: 20px !important;
+        padding: 20px !important;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 961px) and (max-width: 1280px) {
+    .border {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
         width: 25% !important;
+        height: 255px;
+        margin: 15px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 70% !important;
+        margin: 0 auto;
+        padding-left: 150px;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 210px !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 20px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 210px !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 210px !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
+    .border {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
-        width: 27% !important;
+        width: 25% !important;
+        height: 255px;
+        margin: 15px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 70% !important;
+        margin: 0 auto;
+        padding-left: 13%;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 20px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
 @media only screen and (min-width: 1441px) {
+    .border {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
     .info-box {
         width: 25% !important;
+        height: 255px;
+        margin: 15px;
+        padding: 5px;
+    }
+    .first_image h1 {
+        padding-top: 15px;
+    }
+    .first_image p {
+        padding-top: 20px;
+    }
+    .text01 {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 30pt;
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+    .container {
+        width: 70% !important;
+        margin: 0 auto;
+        padding-left: 14%;
+    }
+    .crd1 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd1 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .ceo {
+        display: inline-block;
+        margin-top: 35px;
+        padding-left: 20px;
+        font-size: 15pt;
+    }
+    .crd2 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd2 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .crd3 p {
+        margin-left: 15px;
+        padding-top: 12px;
+    }
+    .crd3 {
+        display: inline-block;
+        width: 22% !important;
+        float: left;
+        text-align: left;
+        margin: 10px !important;
+        padding: 10px !important;
+        background-color: #e0f2f7;
+    }
+    .footer {
+        width: 100%;
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        margin-top: 20px;
+    }
+    .com_details {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages {
+        display: inline-block;
+        float: left;
+        width: 15%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
+    }
+    .pages a {
+        text-decoration: none;
+    }
+    .pages a:link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .social {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        color: #fff;
+        padding: 15px !important;
+        margin: 15px !important;
     }
 }
 
@@ -165,11 +889,11 @@
 
 .crd1 {
     display: inline-block;
-    width: 250px;
+    width: 250fr !important;
     float: left;
     text-align: left;
-    margin: 20px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: #e0f2f7;
 }
 
@@ -186,11 +910,11 @@
 
 .crd2 {
     display: inline-block;
-    width: 250px;
+    width: 250fr !important;
     float: left;
     text-align: left;
-    margin: 20px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: #e0f2f7;
 }
 
@@ -201,11 +925,11 @@
 
 .crd3 {
     display: inline-block;
-    width: 250px;
+    width: 250fr !important;
     float: left;
     text-align: left;
-    margin: 20px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: #e0f2f7;
 }
 
