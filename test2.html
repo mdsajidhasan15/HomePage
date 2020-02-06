@@ -17,7 +17,15 @@
 
     <script>
         const tableHeaderConfig = ["id", "name", "gender"];
-        const tableData = [{}, {}, {}]
+        const tableData = [{}, {}, {}];
+        var container = document.getElementById('test-div');
+
+        tableHeaderConfig.forEach(element => {
+            var x = document.createElement('p');
+            var y = document.createTextNode(element);
+            x.appendChild(y);
+            container.appendChild(x);
+        })
     </script>
 
 </body>
