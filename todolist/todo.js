@@ -40,10 +40,8 @@ function getTodos() {
         li.appendChild(document.createTextNode(todo));
         // Create new link element
         const link = document.createElement('a');
-        // Add class
-        link.className = 'delete-item secondary-content';
-        // Add icon html
-        link.innerHTML = '<i class="fa fa-remove"></i>';
+
+
         // Append the link to li
         li.appendChild(link);
 
@@ -66,10 +64,8 @@ function addTodo(e) {
     li.appendChild(document.createTextNode(todoInput.value));
     // Create new link element
     const link = document.createElement('a');
-    // Add class
-    link.className = 'delete-item secondary-content';
-    // Add icon html
-    link.innerHTML = '<i class="fa fa-remove"></i>';
+
+
     // Append the link to li
     li.appendChild(link);
 
