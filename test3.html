@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>a <button id="0" onclick="remove(event)">remove</button></li>
+        <li>b <button id="1" onclick="remove(event)">remove</button></li>
+        <li>c <button id="2" onclick="remove(event)">remove</button></li>
+    </ul>
+
+    <script>
+        let task = [
+            {
+                id: "80425820-97ac-4df2-90dc-a55f673b7ae9",
+                Name: "Task 1",
+                Priority: "High"
+            },
+            {
+                id: "5898e9a6-939a-4eb5-8b8e-adaefc542d34",
+                Name: "Task 2",
+                Priority: "Low"
+            },
+            {
+                id: "6627a70b-d3ea-48e8-90cb-6857ffe09900",
+                Name: "Task 3",
+                Priority: "Medium"
+            }
+        ];
+        console.log(task);
+
+        function remove(event) {
+            task.splice(event.toElement.id, 1);
+            console.log(task);
+        }
+    </script>
+</body>
+
+</html>

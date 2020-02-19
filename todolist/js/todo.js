@@ -6,24 +6,15 @@ const filter = document.querySelector('#filter');
 const todoInput = document.querySelector('#todo');
 
 // Load all event listeners
-loadEventListeners();
-
-// Load all event listeners
 function loadEventListeners() {
-
-    document.addEventListener('DOMContentLoaded', getTodos);
-
+    renderList();
     form.addEventListener('submit', addTodo);
-
     todoList.addEventListener('click', removeTodo);
-
     clearBtn.addEventListener('click', clearTodos);
-
-    filter.addEventListener('keyup', filterTodos);
+    // filter.addEventListener('keyup', filterTodos);
 }
 
-// Get Todos from LS
-function getTodos() {
+function renderList() {
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
@@ -31,25 +22,16 @@ function getTodos() {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
 
-    todos.forEach(function(todo) {
-        // Create li element
+    todoList.innerHTML = '';
+
+    todos.forEach(function (todo, index) {
         const li = document.createElement('li');
-        // Add class
         li.className = 'collection-item';
-        // Create text node and append to li
         li.appendChild(document.createTextNode(todo));
-        // Create new link element
         const link = document.createElement('a');
-
         link.className = 'delete-item secondary-content';
-
-        link.innerHTML = '<i class="fa fa-remove"></i>';
-
-
-        // Append the link to li
+        link.innerHTML = `<i id='${index}' class="fa fa-remove"></i>`;
         li.appendChild(link);
-
-        // Append li to ul
         todoList.appendChild(li);
     });
 }
@@ -57,35 +39,14 @@ function getTodos() {
 // Add Todo
 function addTodo(e) {
     if (todoInput.value) {
-
-        // Create li element
-        const li = document.createElement('li');
-        // Add class
-        li.className = 'collection-item';
-        // Create text node and append to li
-        li.appendChild(document.createTextNode(todoInput.value));
-        // Create new link element
-        const link = document.createElement('a');
-
-
-        // Append the link to li
-        li.appendChild(link);
-
-        // Append li to ul
-        todoList.appendChild(li);
-
         // Store in LS
         storeTodoInLocalStorage(todoInput.value);
-
-        // Clear input
+        renderList();
         todoInput.value = '';
-
         e.preventDefault();
     } else {
         alert("Failed");
     }
-
-
 }
 
 // Store Todo
@@ -96,9 +57,7 @@ function storeTodoInLocalStorage(todo) {
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-
     todos.push(todo);
-
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
@@ -106,30 +65,22 @@ function storeTodoInLocalStorage(todo) {
 function removeTodo(e) {
     if (e.target.parentElement.classList.contains('delete-item')) {
         if (confirm('Are You Sure?')) {
-            e.target.parentElement.parentElement.remove();
-
-            // Remove from LS
-            removeTodoFromLocalStorage(e.target.parentElement.parentElement);
+            removeTodoFromLocalStorage(e.toElement.id);
         }
     }
 }
 
 // Remove from LS
-function removeTodoFromLocalStorage(todoItem) {
+function removeTodoFromLocalStorage(index) {
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-
-    todos.forEach(function(todo, index) {
-        if (todoItem.textContent === todo) {
-            todos.splice(index, 1);
-        }
-    });
-
+    todos.splice(index, 1);
     localStorage.setItem('todos', JSON.stringify(todos));
+    renderList();
 }
 
 // Clear Todos
@@ -156,7 +107,7 @@ function clearTodosFromLocalStorage() {
 function filterTodos(e) {
     const text = e.target.value.toLowerCase();
 
-    document.querySelectorAll('.collection-item').forEach(function(todo) {
+    document.querySelectorAll('.collection-item').forEach(function (todo) {
         const item = todo.firstChild.textContent;
         if (item.toLowerCase().indexOf(text) != -1) {
             todo.style.display = 'block';
@@ -176,3 +127,11 @@ function checkempty(form) {
         return true;
     }
 }
+
+
+function init() {
+    // Load all event listeners
+    loadEventListeners();
+}
+
+init();
