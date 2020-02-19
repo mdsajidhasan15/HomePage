@@ -41,6 +41,10 @@ function getTodos() {
         // Create new link element
         const link = document.createElement('a');
 
+        link.className = 'delete-item secondary-content';
+
+        link.innerHTML = '<i class="fa fa-remove"></i>';
+
 
         // Append the link to li
         li.appendChild(link);
@@ -52,33 +56,36 @@ function getTodos() {
 
 // Add Todo
 function addTodo(e) {
-    if (todoInput.value === '') {
-        alert('Add a todo');
+    if (todoInput.value) {
+
+        // Create li element
+        const li = document.createElement('li');
+        // Add class
+        li.className = 'collection-item';
+        // Create text node and append to li
+        li.appendChild(document.createTextNode(todoInput.value));
+        // Create new link element
+        const link = document.createElement('a');
+
+
+        // Append the link to li
+        li.appendChild(link);
+
+        // Append li to ul
+        todoList.appendChild(li);
+
+        // Store in LS
+        storeTodoInLocalStorage(todoInput.value);
+
+        // Clear input
+        todoInput.value = '';
+
+        e.preventDefault();
+    } else {
+        alert("Failed");
     }
 
-    // Create li element
-    const li = document.createElement('li');
-    // Add class
-    li.className = 'collection-item';
-    // Create text node and append to li
-    li.appendChild(document.createTextNode(todoInput.value));
-    // Create new link element
-    const link = document.createElement('a');
 
-
-    // Append the link to li
-    li.appendChild(link);
-
-    // Append li to ul
-    todoList.appendChild(li);
-
-    // Store in LS
-    storeTodoInLocalStorage(todoInput.value);
-
-    // Clear input
-    todoInput.value = '';
-
-    e.preventDefault();
 }
 
 // Store Todo
@@ -127,7 +134,7 @@ function removeTodoFromLocalStorage(todoItem) {
 
 // Clear Todos
 function clearTodos() {
-    // todoList.innerHTML = '';
+    //todoList.innerHTML = '';
 
     // Faster
     while (todoList.firstChild) {
@@ -157,4 +164,15 @@ function filterTodos(e) {
             todo.style.display = 'none';
         }
     });
+}
+
+function checkempty(form) {
+    if (form.name.value) {
+
+        alert("Name cannot be empty\n");
+        return false;
+    } else {
+        alert("Your response has been recorded\n");
+        return true;
+    }
 }

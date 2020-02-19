@@ -4,46 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .success,
+        .error {
+            color: white;
+            padding: 5px;
+            margin: 5px .15px 0;
+        }
+        
+        .success {
+            background: green;
+        }
+        
+        .error {
+            background: red;
+        }
+    </style>
     <title>Document</title>
 </head>
 
 <body>
 
-    <!-- <table id="table">
-        <tr>
-            <td>Your age:</td>
-            <td>
-                <level><input type="radio" name="age" value="young">Less then 18</level>
-                <level><input type="radio" name="age" value="mature" checked>from more then 18</level>
-                <level><input type="radio" name="age" value="senior">more then 60</level>
-            </td>
-        </tr>
-    </table> -->
+    <div class="container">
+        <h1>Add Book</h1>
+        <!-- <form id="book-form">
+            <div>
+                <level>Title</level>
+                <input type="text" id="title" class="u-full-width">
+            </div>
+            <div>
+                <level>Author</level>
+                <input type="text" id="author" class="u-full-width">
+            </div>
+            <div>
+                <level>ISBN</level>
+                <input type="text" id="isbn" class="u-full-width">
+            </div>
+        </form> -->
+        <form id="book-form">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Author</label>
+                <input type="text" class="form-control" id="author">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">ISBN</label>
+                <input type="text" class="form-control" id="isbn">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="form-control bg-success text-white">
+            </div>
+        </form>
 
-    <div class="content1"></div>
-    <div class="content2"></div>
+
+        <hr>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+    </div>
+
 
 
     <script>
-        // let chapter = document.querySelector('.chapter');
-        // console.log(chapter);
-        // let inputs = table.getElementsByTagName('input');
+        //Book constractor
+        function Book(title, author, isbn) {
+            this.title = title;
+            this.author = author;
+            this.isbn = isbn;
+        }
 
-        // for (let input of inputs) {
-        //     console.log(input.value + ' :' + input.checked);
-        // }
+        //UI function
+        function UI() {}
 
-        // let name = prompt('What is your name ?', '<b>Sajid Hasan !</b>');
+        UI.prototype.addBookToList = function(book) {
+            const list = document.getElementById('book-list');
 
-        // content1.innerHTML = name;
-        // content2.textContent = name;
+            //create tr element
 
-        document.body.myData = {
-            name: 'Sajid',
-            title: 'Welcome ..!'
-        };
-        alert(document.body.myData.name);
+            const row = document.createElement('tr');
+
+            //Create column
+            row.innerHTML = `
+
+                <td>${book.title}</td>
+                <td>${book.author}</td>   
+                <td>${book.isbn}</td>
+                <td><a href="#" class = "delete">X</a></td>
+            `;
+            list.appendChild(row);
+
+            //console.log(row);
+        }
+
+
+        //show alert
+
+        UI.prototype.showAlert() = function(massage, className) {
+            const div = document.createElement('div');
+            diu.className = `alert ${className}`;
+            div.appendChild(document.createTextNode(massage));
+            const container = document.querySelector('container');
+            const form = document.querySelector('#book-form');
+            container.insertBefore(div, form);
+        }
+
+        //clear fields
+
+        UI.prototype.clearFields = function() {
+            document.getElementById('title').value = '';
+            document.getElementById('author').value = '';
+            document.getElementById('isbn').value = '';
+        }
+
+
+        //Event Listener
+        document.getElementById('book-form').addEventListener('submit',
+            function(e) {
+                const title = document.getElementById('title').value,
+                    author = document.getElementById('author').value,
+                    isbn = document.getElementById('isbn').value
+
+
+                const book = new Book(title, author, isbn);
+
+                const ui = new UI();
+
+                //validation
+
+                if (title === '' || author === "" || isbn === "") {
+                    ui.showAlert('Please fill in all fields', 'error');
+                } else {
+                    ui.addBookToList(book);
+
+                    ui.clearFields();
+                }
+
+                // console.log(ui);
+
+                e.preventDefault();
+
+            });
     </script>
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+
 
 </body>
 
