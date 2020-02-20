@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+
+    <div id="obj">
+
+        <ul>
+            <li class="01"></li>
+            <li class="02"></li>
+            <li class="03"></li>
+        </ul>
+
+    </div>
+    <script>
+        const userInfo = {
+            name: 'Sajid Hasan',
+            age: 20,
+            location: 'Dhaka'
+        };
+        const values = Object.values(userInfo);
+        console.log(values);
+
+        document.getElementById('obj').innerHTML = values;
+    </script>
+
+
+    <!-- --------------------------------------------------------------------------------- -->
+
+    <div id="obje"></div>
+    <script>
+        const nam1 = {
+            name: 'Sajid Hasan',
+            age: 20,
+            location: 'Dhaka'
+        };
+
+        // Initialize another object
+        const nam2 = {
+            name: 'Sajid Hasan',
+            age: 20,
+            location: 'Dhaka'
+        };
+
+        // Merge the objects
+        const character = Object.assign(nam1, nam2);
+
+        console.log(character);
+
+        document.getElementById('obje').innerHTML = character;
+    </script>
+</body>
+
+</html>

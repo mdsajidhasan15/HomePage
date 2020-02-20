@@ -24,7 +24,7 @@ function renderList() {
 
     todoList.innerHTML = '';
 
-    todos.forEach(function (todo, index) {
+    todos.forEach(function(todo, index) {
         const li = document.createElement('li');
         li.className = 'collection-item';
         li.appendChild(document.createTextNode(todo));
@@ -107,7 +107,7 @@ function clearTodosFromLocalStorage() {
 function filterTodos(e) {
     const text = e.target.value.toLowerCase();
 
-    document.querySelectorAll('.collection-item').forEach(function (todo) {
+    document.querySelectorAll('.collection-item').forEach(function(todo) {
         const item = todo.firstChild.textContent;
         if (item.toLowerCase().indexOf(text) != -1) {
             todo.style.display = 'block';

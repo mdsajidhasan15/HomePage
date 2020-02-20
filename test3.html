@@ -5,40 +5,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #userInfo {
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
-    <ul>
+
+
+    <!-- <div id="userInfoormation">
+        <input type="text" name="name" id="name" placeholder="Enter Your Name">
+        <input type="text" name="age" id="age" placeholder="Enter your Age">
+        <button id="add-button">Add Button</button>
+    </div> -->
+
+    <ul class="infoList"></ul>
+
+    <div id="list">
+
+    </div>
+
+
+
+
+
+    <!-- <ul>
         <li>a <button id="0" onclick="remove(event)">remove</button></li>
         <li>b <button id="1" onclick="remove(event)">remove</button></li>
         <li>c <button id="2" onclick="remove(event)">remove</button></li>
-    </ul>
+    </ul> -->
 
     <script>
-        let task = [
-            {
-                id: "80425820-97ac-4df2-90dc-a55f673b7ae9",
-                Name: "Task 1",
-                Priority: "High"
-            },
-            {
-                id: "5898e9a6-939a-4eb5-8b8e-adaefc542d34",
-                Name: "Task 2",
-                Priority: "Low"
-            },
-            {
-                id: "6627a70b-d3ea-48e8-90cb-6857ffe09900",
-                Name: "Task 3",
-                Priority: "Medium"
-            }
-        ];
-        console.log(task);
+        // let task = [
+        //     {
+        //         id: "80425820-97ac-4df2-90dc-a55f673b7ae9",
+        //         Name: "Task 1",
+        //         Priority: "High"
+        //     },
+        //     {
+        //         id: "5898e9a6-939a-4eb5-8b8e-adaefc542d34",
+        //         Name: "Task 2",
+        //         Priority: "Low"
+        //     },
+        //     {
+        //         id: "6627a70b-d3ea-48e8-90cb-6857ffe09900",
+        //         Name: "Task 3",
+        //         Priority: "Medium"
+        //     }
+        // ];
+        // console.log(task);
 
-        function remove(event) {
-            task.splice(event.toElement.id, 1);
-            console.log(task);
-        }
+        // function remove(event) {
+        //     task.splice(event.toElement.id, 1);
+        //     console.log(task);
+        // }
+
+
+
+
+        // let userName = [{
+        //     userName: "Sajid",
+        //     pass: "****"
+        // }, {
+        //     userName: "Hasan",
+        //     pass: "****"
+        // }];
+
+        // function userInfo() {
+        //     //console.log('Hello, my name is', this.userName)
+
+        //     document.getElementsByClassName('info') = userName, pass;
+        // }
+
+        // //     userName.userInfo = userInfo;
+
+        // //     userName.userInfo();
+
+        // Object.keys(employees).forEach(key => {
+        //     let value = employees[key];
+
+        //     console.log(`${key}: ${value}`);
+        // });
+
+        // javascript code demonstrating a simple object 
+        // let userInfo = {
+        //     name: 'Sajid Hasan',
+        //     age: 20,
+        //     displayInfo: function() {
+        //         console.log(`hellow ${userInfo.name} you are ${userInfo.age} years old`);
+
+        //         var a = document.getElementById('userInfo');
+        //         a.style.color = "Red";
+        //     }
+        // }
+        // userInfo.displayInfo();
+
+        // const addButton = document.querySelector('#add-button');
+
+
+
+        // let userInfo = {
+        //     name: "sajid",
+        //     age: 14
+        // };
+
+        // addButton.addEventListener('click', () => {
+
+        //console.log(el.tagName);
+
+        //     document.getElementById("userInfo").innerHTML = userInfo.name;
+        //     document.getElementById("userinfo").innerHTML = userInfo.age;
+        // });
+
+
+        //document.getElementById("userInfo").innerHTML = userInfo.name + " is " + userInfo.age + " years old.";
     </script>
+
+    <script>
+        // let userInfo = [{
+        //     Name: "Task 1",
+        //     age: 20
+        // }, {
+
+        //     Name: "Task 2",
+        //     age: 20
+        // }, {
+        //     Name: "Task 3",
+        //     age: 20
+        // }];
+
+
+        //console.log(a);
+        //document.getElementsByClassName('infoList').innerHTML = userInfo;
+
+        //function userObj() {
+        //a.splice(event.toElement.id);
+        //console.log(a);
+        //document.getElementById('user').innerHTML = userObj();
+        //}
+
+        // document.getElementById('user').innerHTML = a.Name;
+
+        // var x = document.getElementById(user);
+        // user.x();
+    </script>
+    <script>
+        const userInfo = {
+            name: 'Sajid',
+            age: 20,
+            location: 'Dhaka'
+        };
+        const keys = Object.keys(userInfo);
+
+        console.log(keys);
+
+
+        Object.keys(userInfo).forEach(key => {
+            let value = userInfo[key];
+
+            document.getElementsById('list').innerHTML = (`${key}: ${value}`);
+            //console.log(`${key}: ${value}`);
+        });
+
+
+
+        //document.getElementsById('list').innerHTML = keys(userInfo).value;
+    </script>
+
 </body>
 
 </html>
