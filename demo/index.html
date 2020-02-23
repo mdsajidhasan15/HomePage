@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Todo list</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.awesomefunctions.com/awesome-functions.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script/todo.js"></script>
+
+</head>
+
+<body>
+
+    <h1 class="text-center">Todo List</h1>
+    <div class="text-center">
+        <div class="btn btn-success BTN_Add_New"> Add New</div>
+        <div class="btn btn-success BTN_View"> View All Todos</div>
+        <div class="btn btn-success BTN_Delete_All"> Delete All Todos</div>
+    </div>
+    <br><br>
+
+    <div class=" container Screen Screen_Data  "> </div>
+
+    <div class="Screen Template_New_Todo" style="display:none;">
+
+        <div class="panel panel-primary  center-block" style="max-width:400px;">
+
+            <div class="panel-heading text-center">Add A New Todo</div>
+
+            <div class="panel-body">
+
+                <div class="input-group">
+                    <span class="input-group-addon">Todo Name</span>
+                    <input type="text" class="form-control TodoName" placeholder="Type In Todo Name">
+                </div>
+                <br><br>
+
+                <div class="input-group">
+                    <span class="input-group-addon">Todo Completion Date</span>
+                    <input type="date" class="form-control TodoDate">
+                </div>
+                <br><br>
+
+                <div class="input-group">
+                    <span class="input-group-addon">Todo description</span>
+                    <textarea class="form-control TodoDesc" rows="5" placeholder="Type In Todo description"></textarea>
+                </div>
+                <br><br>
+
+
+                <div class="btn btn-primary text-center btn_Todo"> View All Todos</div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
