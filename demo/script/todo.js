@@ -1,7 +1,6 @@
 $(document).ready(function($) {
 
     $('.Screen').hide();
-
     var LocalstorageName = 'TodoManager';
 
     $(document).on('click', '.BTN_Add_New', function(event) {
@@ -13,13 +12,14 @@ $(document).ready(function($) {
         $('.Screen_Data').show();
     });
 
-
     $('.Screen_Data').on('click', '.BTN_Save_New_Todo', function(event) {
 
         bs.ClearError();
         var TodoName = $('.Screen_Data').find('.TodoName');
         var TodoDate = $('.Screen_Data').find('.TodoDate');
         var TodoDesc = $('.Screen_Data').find('.TodoDesc');
+        var TodoPrio = $('.Screen_Data').find('.TodoPrio');
+
 
         if (frm.IsEmpty(TodoName.val())) {
             bs.ShowError("Please enter Todo Name", TodoName)
@@ -27,12 +27,15 @@ $(document).ready(function($) {
             bs.ShowError("Please enter Todo Completion Date", TodoDate)
         } else if (frm.IsEmpty(TodoDesc.val())) {
             bs.ShowError("Please enter Todo description", TodoDesc)
+        } else if (frm.IsEmpty(TodoPrio.val())) {
+            bs.ShowError("Please enter Todo prioprity", TodoPrio)
         } else {
             var AddTodo = {
                 'rec_id': js.MD5('', 6),
                 'TodoName': TodoName.val(),
                 'TodoDate': TodoDate.val(),
                 'TodoDesc': TodoDesc.val(),
+                'TodoPrio': TodoPrio.val(),
             };
 
             ls.AddArr(LocalstorageName, AddTodo);
@@ -42,7 +45,6 @@ $(document).ready(function($) {
 
             $(".BTN_View").click();
         }
-
 
     });
 
@@ -61,11 +63,13 @@ $(document).ready(function($) {
         strTableData += '<table class="table table-hover">';
         strTableData += '<thead>';
         //strTableData += '<tr>';
-        strTableData += '<th>Line Num</th>';
+        strTableData += '<th>Line Number</th>';
         strTableData += '<th>Todo Name</th>';
         strTableData += '<th>Todo Date</th>';
-        strTableData += '<th>Todo Desc</th>';
-        strTableData += '<th>Options</th>';
+        strTableData += '<th>Todo Description</th>';
+        //strTableData += '<th>Options</th>';
+        strTableData += '<th>Todo Priority</th>';
+
         //strTableData += '</tr>'; 		
         strTableData += '</thead>';
 
@@ -79,10 +83,13 @@ $(document).ready(function($) {
             strTableData += '<td>' + line_num + '</td>';
             strTableData += '<td>' + val.TodoName + '</td>';
             strTableData += '<td>' + moment(val.TodoDate).format('M-D-Y') + '</td>';
-            strTableData += '<td>' + val.TodoDesc + '<td>';
+            strTableData += '<td>' + val.TodoDesc + '</td>';
+            strTableData += '<td>' + val.TodoPrio + '</td>';
+
 
             var Edit = '<a href="#" class="BTN_Edit_Entry" rec_id="' + val.rec_id + '">Edit</a> / ';
             var Delete = '<a href="#" class="BTN_Delete_Entry" rec_id="' + val.rec_id + '" todo_name="' + val.TodoName + '">Delete</a>';
+
 
             strTableData += '<td>' + Edit + Delete + '<td>';
             strTableData += '</tr>';
@@ -107,15 +114,14 @@ $(document).ready(function($) {
 
 
         var WhereValueEquals = { rec_id: rec_id }
-
         var data = ls.GetArr(LocalstorageName, WhereValueEquals)
 
         console.table(data);
 
-
         var TodoName = $('.Screen_Data').find('.TodoName').val(data[0].TodoName);
         var TodoDate = $('.Screen_Data').find('.TodoDate').val(data[0].TodoDate);
         var TodoDesc = $('.Screen_Data').find('.TodoDesc').val(data[0].TodoDesc);
+        var TodoPrio = $('.Screen_Data').find('.TodoPrio').val(data[0].TodoPrio);
 
         $('.Screen_Data').show();
     });
@@ -129,6 +135,8 @@ $(document).ready(function($) {
         var TodoName = $('.Screen_Data').find('.TodoName');
         var TodoDate = $('.Screen_Data').find('.TodoDate');
         var TodoDesc = $('.Screen_Data').find('.TodoDesc');
+        var TodoPrio = $('.Screen_Data').find('.TodoPrio');
+
 
         if (frm.IsEmpty(TodoName.val())) {
             bs.ShowError("Please enter Todo Name", TodoName)
@@ -136,6 +144,8 @@ $(document).ready(function($) {
             bs.ShowError("Please enter Todo Completion Date", TodoDate)
         } else if (frm.IsEmpty(TodoDesc.val())) {
             bs.ShowError("Please enter Todo description", TodoDesc)
+        } else if (frm.IsEmpty(TodoPrio.val())) {
+            bs.ShowError("Please enter Todo Priority", TodoPrio)
         } else {
             var rec_id = $(this).attr('rec_id');
 
@@ -143,10 +153,11 @@ $(document).ready(function($) {
                 'TodoName': TodoName.val(),
                 'TodoDate': TodoDate.val(),
                 'TodoDesc': TodoDesc.val(),
+                'TodoPrio': TodoPrio.val(),
+
             };
 
             var WhereObjArr = { 'rec_id': rec_id }
-
             ls.UpdateArr(LocalstorageName, FieldObjArrToUpdatValue, WhereObjArr)
 
             var d = bs.AlertMsg("Successfully update your todo", "success");
@@ -154,13 +165,12 @@ $(document).ready(function($) {
 
             $(".BTN_View").click();
         }
-
-
     });
 
     $(document).on('click', '.BTN_Delete_Entry', function(event) {
         var rec_id = $(this).attr('rec_id');
         var todo_name = $(this).attr('todo_name');
+
 
         var ObjArrOptions = {
             text: "Are you sure you want to delete Todo Name (<b>" + todo_name + "<b>) ?",
@@ -177,7 +187,7 @@ $(document).ready(function($) {
             cancel: function(button) {
 
             },
-            confirmButton: "Yes I am",
+            confirmButton: "Yes",
             cancelButton: "No",
             confirmButtonClass: "btn-danger",
             cancelButtonClass: "btn-default",
@@ -197,7 +207,6 @@ $(document).ready(function($) {
             return false;
         }
 
-
         var ObjArrOptions = {
             text: "Are you sure you want to delete All Todos ?",
             title: "Confirmation required",
@@ -209,26 +218,23 @@ $(document).ready(function($) {
             cancel: function(button) {
 
             },
-            confirmButton: "Yes I am",
+            confirmButton: "Yes",
             cancelButton: "No",
             confirmButtonClass: "btn-danger",
             cancelButtonClass: "btn-default",
             dialogClass: "modal-dialog modal-lg"
         }
-
-
         bs.confirm(ObjArrOptions);
 
     });
 
+    $(document).on('click', '.SEARCH', function(event) {
+        var searchFun = () => {
 
+        }
+    });
     var AllTodos = ls.GetAllArr(LocalstorageName);
-
     if (js.Size(AllTodos) > 0) {
         $(".BTN_View").click();
     }
-
-
-
-
 });
