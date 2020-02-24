@@ -60,7 +60,7 @@ $(document).ready(function($) {
         }
 
         var strTableData = '';
-        strTableData += '<table class="table table-hover">';
+        strTableData += '<table id="myTable" class="table table-hover">';
         strTableData += '<thead>';
         //strTableData += '<tr>';
         strTableData += '<th>Line Number</th>';
@@ -228,11 +228,86 @@ $(document).ready(function($) {
 
     });
 
-    $(document).on('click', '.SEARCH', function(event) {
-        var searchFun = () => {
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".table tr").filter(function() {
+                $(this).toggle($(this).text()
+                    .toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    $(document).on('click', '#table', function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
 
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
         }
     });
+
+    // function sortTable(n) {
+
+    // }
+
+
+
+    // $(document).on('click', '#01', (function() {
+    //         function sortTable() {
+    //             var table, rows, switching, i, x, y, shouldSwitch;
+    //             table = document.getElementsByClassName("table");
+    //             switching = true;
+    //             while (switching) {
+    //                 switching = false;
+    //                 rows = table.rows;
+    //                 for (i = 1; i < (rows.length - 1); i++) {
+    //                     shouldSwitch = false;
+    //                     x = rows[i].getElementsByTagName("td")[1];
+    //                     y = rows[i + 1].getElementsByTagName("td")[1];
+    //                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    //                         shouldSwitch = true;
+    //                         break;
+    //                     }
+    //                 }
+    //                 if (shouldSwitch) {
+    //                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+    //                     switching = true;
+    //                 }
+    //             }
+    //         }
+    //     });
+
+
+
     var AllTodos = ls.GetAllArr(LocalstorageName);
     if (js.Size(AllTodos) > 0) {
         $(".BTN_View").click();
