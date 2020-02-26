@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Todo list</title>
@@ -30,13 +30,13 @@
         <div class="btn btn-success BTN_Delete_All"> Delete All Todos</div>
     </div>
     <br><br>
-    <div>
-        <input type="text" id="myInput" placeholder="Search for your todo data">
+    <div class="container">
+        <input type="text" id="myInput" placeholder="Search here">
     </div>
     <br><br>
     <div class="container text-center">
         <h3 class="text-center">Priority Sort</h3>
-        <button class="btn btn-default" onclick="sortTable()">Sort</button>
+        <button class="btn btn-primary" onclick="sortTable()">Sort</button>
     </div>
     <br><br>
 
@@ -70,7 +70,12 @@
 
                 <div class="input-group">
                     <span class="input-group-addon">Todo Priority</span>
-                    <input type="text" class="form-control TodoPrio" placeholder="Type In Priority">
+                    <p>
+                        <select class="TodoPrio" id="TodoPrio">
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </p>
                 </div>
                 <br><br>
 

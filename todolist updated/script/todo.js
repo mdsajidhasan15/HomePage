@@ -84,7 +84,8 @@ $(document).ready(function($) {
             strTableData += '<td>' + val.TodoName + '</td>';
             strTableData += '<td>' + moment(val.TodoDate).format('M-D-Y') + '</td>';
             strTableData += '<td>' + val.TodoDesc + '</td>';
-            strTableData += '<td>' + val.TodoPrio + '</td>';
+            strTableData += '<td>' + prioOption.TodoPrio + '</td>';
+
 
 
             var Edit = '<a href="#" class="BTN_Edit_Entry" rec_id="' + val.rec_id + '">Edit</a> / ';
@@ -144,7 +145,7 @@ $(document).ready(function($) {
             bs.ShowError("Please enter Todo Completion Date", TodoDate)
         } else if (frm.IsEmpty(TodoDesc.val())) {
             bs.ShowError("Please enter Todo description", TodoDesc)
-        } else if (frm.IsEmpty(TodoPrio.val())) {
+        } else if (frm.IsEmpty(TodoPrio.prioOption())) {
             bs.ShowError("Please enter Todo Priority", TodoPrio)
         } else {
             var rec_id = $(this).attr('rec_id');
@@ -153,7 +154,7 @@ $(document).ready(function($) {
                 'TodoName': TodoName.val(),
                 'TodoDate': TodoDate.val(),
                 'TodoDesc': TodoDesc.val(),
-                'TodoPrio': TodoPrio.val(),
+                'TodoPrio': TodoPrio.prioOption(),
 
             };
 
@@ -266,4 +267,12 @@ function sortTable() {
             switching = true;
         }
     }
+}
+
+function prioOption() {
+    selectElement = document.querySelector(TodoPrio);
+
+    TodoPrio = selectElement.value;
+
+    document.querySelector('.Todoprio').textContent = TodoPrio;
 }
