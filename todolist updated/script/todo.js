@@ -19,6 +19,7 @@ $(document).ready(function($) {
         var TodoDate = $('.Screen_Data').find('.TodoDate');
         var TodoDesc = $('.Screen_Data').find('.TodoDesc');
         var TodoPrio = $('.Screen_Data').find('.TodoPrio');
+        //alert(JSON.stringify(TodoPrio.val()));
 
 
         if (frm.IsEmpty(TodoName.val())) {
@@ -84,7 +85,7 @@ $(document).ready(function($) {
             strTableData += '<td>' + val.TodoName + '</td>';
             strTableData += '<td>' + moment(val.TodoDate).format('M-D-Y') + '</td>';
             strTableData += '<td>' + val.TodoDesc + '</td>';
-            strTableData += '<td>' + prioOption.TodoPrio + '</td>';
+            strTableData += '<td class = "Todoprio">' + prioOption.TodoPrio + '</td>';
 
 
 
@@ -270,7 +271,7 @@ function sortTable() {
 }
 
 function prioOption() {
-    selectElement = document.querySelector(TodoPrio);
+    selectElement = document.querySelector('#TodoPrio');
 
     TodoPrio = selectElement.value;
 
