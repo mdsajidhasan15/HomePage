@@ -68,8 +68,8 @@ $(document).ready(function($) {
         strTableData += '<th>Todo Name</th>';
         strTableData += '<th>Todo Date</th>';
         strTableData += '<th>Todo Description</th>';
-        //strTableData += '<th>Options</th>';
         strTableData += '<th>Todo Priority</th>';
+        strTableData += '<th>Options</th>';
 
         //strTableData += '</tr>'; 		
         strTableData += '</thead>';
