@@ -85,7 +85,7 @@ $(document).ready(function($) {
             strTableData += '<td>' + val.TodoName + '</td>';
             strTableData += '<td>' + moment(val.TodoDate).format('M-D-Y') + '</td>';
             strTableData += '<td>' + val.TodoDesc + '</td>';
-            strTableData += '<td class = "Todoprio">' + prioOption.TodoPrio + '</td>';
+            strTableData += '<td>' + val.TodoPrio + '</td>';
 
 
 
