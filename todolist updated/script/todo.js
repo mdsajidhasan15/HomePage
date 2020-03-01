@@ -6,6 +6,7 @@ $(document).ready(function($) {
     $(document).on('click', '.BTN_Add_New', function(event) {
 
         var GetTemplateData = $('.Template_New_Todo').html();
+        console.log(GetTemplateData);
 
         $('.Screen_Data').html(GetTemplateData);
         $('.Screen_Data').find('.btn_Todo').html('Save').addClass('BTN_Save_New_Todo')
@@ -19,7 +20,6 @@ $(document).ready(function($) {
         var TodoDate = $('.Screen_Data').find('.TodoDate');
         var TodoDesc = $('.Screen_Data').find('.TodoDesc');
         var TodoPrio = $('.Screen_Data').find('.TodoPrio');
-        //alert(JSON.stringify(TodoPrio.val()));
 
 
         if (frm.IsEmpty(TodoName.val())) {
@@ -200,6 +200,10 @@ $(document).ready(function($) {
 
     });
 
+    $(document).on('click', '.btn_Todo_Cancel', function() {
+        $(".BTN_View").trigger("click");
+    });
+
     $(document).on('click', '.BTN_Delete_All', function(event) {
         var AllTodos = _.sortBy(ls.GetAllArr(LocalstorageName), ['TodoDate']);
 
@@ -246,26 +250,40 @@ $(document).ready(function($) {
     }
 });
 
+
 function sortTable() {
-    var table, i, x, y;
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("myTable");
-    var switching = true;
+    switching = true;
+    dir = "asc";
     while (switching) {
         switching = false;
-        var rows = table.rows;
+        rows = table.rows;
         for (i = 1; i < (rows.length - 1); i++) {
-            var Switch = false;
+            shouldSwitch = false;
             x = rows[i].getElementsByTagName("TD")[4];
             y = rows[i + 1].getElementsByTagName("TD")[4];
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-
-                Switch = true;
-                break;
+            if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
             }
         }
-        if (Switch) {
+        if (shouldSwitch) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
+            switchcount++;
+        } else {
+            if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            }
         }
     }
 }
