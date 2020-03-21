@@ -24,29 +24,15 @@ function renderList() {
 
     todoList.innerHTML = '';
 
-    todos.forEach(function(todo, index) {
-        const li = document.createElement('li');
-        li.className = 'collection-item';
-        li.appendChild(document.createTextNode(todo));
-        const link = document.createElement('a');
-        link.className = 'delete-item secondary-content';
-        link.innerHTML = `<i id='${index}' class="fa fa-remove"></i>`;
-        li.appendChild(link);
-        todoList.appendChild(li);
-    });
+document.getElementById("#formGroupExampleInput").addEventListener("click", function() {
+    document.getElementById("add-button").innerHTML = inputId('TD[0]');
+});
 }
 
 // Add Todo
 function addTodo(e) {
     if (todoInput.value) {
-        // Store in LS
         storeTodoInLocalStorage(todoInput.value);
-        renderList();
-        todoInput.value = '';
-        document.getElementById('titleErr').innerHTML = "";
-        e.preventDefault();
-    } else {
-        document.getElementById('titleErr').innerHTML = "*Please give valid input."
     }
 }
 // Store Todo
