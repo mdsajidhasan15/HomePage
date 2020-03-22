@@ -4,59 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>demo Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 
 <body>
 
+    <form onsubmit="add(); return false;">
 
-    <div id="obj">
 
-        <ul>
-            <li class="01"></li>
-            <li class="02"></li>
-            <li class="03"></li>
-        </ul>
+        <input type="text" id="inputName" placeholder="Enter your Name:">
+        <br>
+        <input type="text" id="inputAge" placeholder="Enter your Age:">
+        <br>
+        <input type="text" id="inputCategory" placeholder="Enter your Category:">
+        <br>
+        <input type="submit" value="Submit">
+        <input type="update" value="Update">
+        <input type="clear" value="clear">
 
-    </div>
+        <!-- <button onclick="mytablecreation()">Submit</button> -->
+
+    </form>
+
+
+
     <script>
-        const userInfo = {
-            name: 'Sajid Hasan',
-            age: 20,
-            location: 'Dhaka'
-        };
-        const values = Object.values(userInfo);
-        console.log(values);
+        function addData() {
+            getData();
+            arr.push({
+                inputName: document.getElementById("inputName").value,
+                inputAge: document.getElementById("inputAge").value,
+                inputCategory: document.getElementById("inputCategory").value
 
-        document.getElementById('obj').innerHTML = values;
+            });
+
+            localStorage.setItem("localData", JSON.stringify(arr));
+        }
+
+        function showData() {
+            getData();
+            var table = document.getElementById("myTable");
+
+            for (i = 0; i < arr.length; i++) {
+                var row = table.insertRow();
+
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                var cell3 = row.insertCell();
+
+
+                cell1.innerHTML = arr[i].inputName;
+                cell2.innerHTML = arr[i].inputAge;
+                cell3.innerHTML = arr[i].inputCategory;
+
+            }
+
+        }
+
+        function getData() {
+            var str = localStorage.getItem("localData");
+            if (str != null) {
+                arr = JSON.parse(str);
+            }
+        }
+
+        function deleteData() {
+            localStorage.clear()
+        }
+
+        // var ulElement = document.getElementById("new-item");
+        // var newLiElement = document.createElement("li");
+        // var newTextElement = document.createTextNode("Forth item");
+        // newLiElement.appendChild(newTextElement);
+        // ulElement.appendChild(newLiElement);
+
+
+
+
+
+
+
+        // function mytablecreation() {
+        //     var tableElemennt = document.getElementById("myTable");
+        //     var getName = document.getElementById("input-name");
+        //     var getAge = document.getElementById("input-age");
+        //     var getCate = document.getElementById("input-category");
+
+
+        //     var newTableData1 = document.createElement("TD");
+        //     var newTableData2 = document.createElement("TD");
+        //     var newTableData3 = document.createElement("TD");
+
+
+        //     newTableData1.appendChild(getName);
+        //     newTableData2.appendChild(getAge);
+        //     newTableData3.appendChild(getCate);
+
+
+        //     // tableElemennt.appendChild(newTableData1);
+        //     // tableElemennt.appendChild(newTableData2);
+        //     // tableElemennt.appendChild(newTableData3);
+
+        //     var tableItem1 = document.getElementById("01");
+        //     var tableItem2 = document.getElementById("02");
+        //     var tableItem3 = document.getElementById("03");
+
+
+        //     tableItem1.parentNode.appendChild(newTableData1);
+        //     tableItem2.parentNode.appendChild(newTableData2);
+        //     tableItem3.parentNode.appendChild(newTableData3);
+
+
+
+        // }
+
+        var tableCreate = document.createElement("table");
+        var tableTh = document.createElement("th");
+        var TableTr = document.createElement("tr");
+        var tableTd = document.createElement("td");
+
+        var TableHead1 = document.createTextNode("Name");
+        var TableHead2 = document.createTextNode("Age");
+        var TableHead3 = document.createTextNode("Category");
+
+        TableHead1.appendChild(tableTh);
+        TableHead1.appendChild(tableTh);
+        TableHead1.appendChild(tableTh);
     </script>
 
-
-    <!-- --------------------------------------------------------------------------------- -->
-
-    <div id="obje"></div>
-    <script>
-        const nam1 = {
-            name: 'Sajid Hasan',
-            age: 20,
-            location: 'Dhaka'
-        };
-
-        // Initialize another object
-        const nam2 = {
-            name: 'Sajid Hasan',
-            age: 20,
-            location: 'Dhaka'
-        };
-
-        // Merge the objects
-        const character = Object.assign(nam1, nam2);
-
-        console.log(character);
-
-        document.getElementById('obje').innerHTML = character;
-    </script>
 </body>
 
 </html>

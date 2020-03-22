@@ -14,50 +14,64 @@
     <title>Todo List</title>
 </head>
 
-<body>
+<body onload="showData()">
 
     <div class="container">
         <div class="card text-center">
-
             <h1 class="card-header text-primary">Todo List</h1>
-            <div class="alert-danger" role="alert"></div>
-            <div class="card-body">
-                <div class="input-field">
-                    <input type="text" name="todo" id="todo" placeholder="Add your todo">
-                    <p style="color: red; font-size: 12px" id="titleErr"></p>
-                    <button id="add-button" class="btn" value="Add Todo">Add Todo</button>
+            <form onsubmit="addData(); return false;">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Your Id:</label>
+                    <input type="text" class="form-control addInputId" id="id" placeholder="Enter Your Id">
                 </div>
-            </div>
-            <div class="card-action">
-                <div class="card-footer text-muted">
-                    Your all todos here
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Your Name:</label>
+                    <input type="text" class="form-control addInputName" id="name" placeholder="Enter Your name">
                 </div>
-                <ul class="collection"></ul>
-                <a href="#" class="clear-todos">Clear Todo</a>
+                <label for="formGroupExampleInput2">Priority:</label>
+                <select class="form-control addInputPriority" id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <input type="submit" class="btn btn-outline-dark" value="Submit">
+                <input type="reset" class="btn btn-outline-dark" value="clear">
+                <input type="button" class="btn btn-outline-dark" value="Delete" onclick="deleteData();">
+            </form>
+
+            <input type="text" id="myInput" placeholder="Search here">
+            <div>
+                <!-- <button id="add-button" class="btn btn-outline-dark" value="Add Todo">Add Todo</button>
+                <button id="edit-button" class="btn btn-outline-dark" value="Add Todo">Update Todo</button> -->
+
+
+                <!-- <button id="add-button" class="btn btn-outline-dark" onclick="addTodoListItem()">Add Todo</button>
+                <button id="edit-button" class="btn btn-outline-dark">Update Todo</button>
+                <button id="add-button" class="btn btn-outline-dark" onclick="addTodoListUpdated()">Add Todo</button> -->
+
             </div>
 
+            <div class="container text-center">
+                <h3 class="text-center">Priority Sort</h3>
+                <button class="btn btn-primary" onclick="sortTable()">Sort (Ascending/Descending )</button>
+            </div>
 
 
         </div>
+        <table class="table" id="myTable">
+            <tr>
+                <!-- <th>Id</th>
+                <th>Name</th>
+                <th>Priority</th> -->
+                <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">Id</th>
+                <th onclick="sort_table(people, 1, asc2); asc2 *= -1; asc3 = 1; asc1 = 1;">Name</th>
+                <th onclick="sort_table(people, 2, asc3); asc3 *= -1; asc1 = 1; asc2 = 1;">Priority</th>
 
-        <div class="card-group">
-            <div class="card">
-                <div class="card-body">
-                    <h5 id="card-title"></h5>
-
-                </div>
-            </div>
-
-        </div>
+            </tr>
+        </table>
 
 
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-
     <script src="js/todo.js"></script>
 </body>
 

@@ -204,35 +204,35 @@ $(document).ready(function($) {
         $(".BTN_View").trigger("click");
     });
 
-    $(document).on('click', '.BTN_Delete_All', function(event) {
-        var AllTodos = _.sortBy(ls.GetAllArr(LocalstorageName), ['TodoDate']);
+    // $(document).on('click', '.BTN_Delete_All', function(event) {
+    //     var AllTodos = _.sortBy(ls.GetAllArr(LocalstorageName), ['TodoDate']);
 
-        if (js.Size(AllTodos) < 1 || js.Size(AllTodos) == 0) {
-            var d = bs.AlertMsg("Oppps...Looks like there are no todos. <br><br> You should add a todo first", "warning");
-            $('.Screen_Data').html(d).show();
-            return false;
-        }
+    //     if (js.Size(AllTodos) < 1 || js.Size(AllTodos) == 0) {
+    //         var d = bs.AlertMsg("Oppps...Looks like there are no todos. <br><br> You should add a todo first", "warning");
+    //         $('.Screen_Data').html(d).show();
+    //         return false;
+    //     }
 
-        var ObjArrOptions = {
-            text: "Are you sure you want to delete All Todos ?",
-            title: "Confirmation required",
-            confirm: function(button) {
-                ls.Delete(LocalstorageName);
-                $(".BTN_View").click();
+    //     var ObjArrOptions = {
+    //         text: "Are you sure you want to delete All Todos ?",
+    //         title: "Confirmation required",
+    //         confirm: function(button) {
+    //             ls.Delete(LocalstorageName);
+    //             $(".BTN_View").click();
 
-            },
-            cancel: function(button) {
+    //         },
+    //         cancel: function(button) {
 
-            },
-            confirmButton: "Yes",
-            cancelButton: "No",
-            confirmButtonClass: "btn-danger",
-            cancelButtonClass: "btn-default",
-            dialogClass: "modal-dialog modal-lg"
-        }
-        bs.confirm(ObjArrOptions);
+    //         },
+    //         confirmButton: "Yes",
+    //         cancelButton: "No",
+    //         confirmButtonClass: "btn-danger",
+    //         cancelButtonClass: "btn-default",
+    //         dialogClass: "modal-dialog modal-lg"
+    //     }
+    //     bs.confirm(ObjArrOptions);
 
-    });
+    // });
 
     $(document).ready(function() {
         $("#myInput").on("keyup", function() {

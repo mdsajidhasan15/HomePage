@@ -1,0 +1,101 @@
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+    
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .container {
+        padding: 2px 16px;
+    }
+    
+    .card-title {
+        padding-left: 46%;
+        padding-right: 47%;
+        display: inline-block;
+        color: lightcoral;
+    }
+    
+    .todo-form {
+        padding-left: 46%;
+        padding-right: 46%;
+        display: inline-block;
+        color: rgb(128, 240, 221);
+    }
+    
+    .input-field {
+        padding-top: 10px;
+        padding-left: 45%;
+        padding-right: 49%;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: red;
+    }
+    
+    .input-field .text {
+        padding-left: 40%;
+        padding-right: 40%;
+        display: inline-block;
+        color:
+    }
+    
+    .input-field .btn {
+        margin-left: 0%;
+        margin-right: 46%;
+        width: 100%;
+        display: inline-block;
+        color: rgb(35, 245, 147);
+        font-size: 20px;
+    }
+    
+    #todo-title {
+        margin-top: 10px;
+        margin-left: 45.2%;
+        margin-right: 45%;
+        display: inline-block;
+        color: rgb(12, 175, 240);
+        font-size: 20px;
+    }
+    /* 
+#todo {
+    margin-left: 45%;
+    margin-right: 45%;
+    display: inline-block;
+    color: lightslategray;
+} */
+    
+    .todotext {
+        /* padding-left: 46%;
+    padding-right: 46%; */
+        display: inline-block;
+        color: rgba(26, 197, 228, 0.856);
+    }
+    
+    .clear-todos {
+        margin-top: 10px;
+        margin-left: 47%;
+        margin-right: 48%;
+        display: inline-block;
+        font-size: 20px;
+        text-decoration: none;
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .collection {
+        margin-top: 10px;
+        margin-left: 46%;
+        margin-right: 40%;
+        display: inline-block;
+        font-size: 20px;
+        list-style-type: square;
+    }

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        JavaScript
+    </title>
+</head>
+
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;">Sajid</h1>
+    <p id="GFG_UP" style="font-size: 19px; font-weight: bold;"></p>
+    <p id="GFG_DOWN" style="color: green; font-size: 24px; font-weight: bold;"></p>
+
+    <script>
+        var up = document.getElementById('GFG_UP');
+        var down = document.getElementById('GFG_DOWN');
+        var header = table.createTHead();
+        var strTableData = '';
+        strTableData += '<table id="myTable" class="table table-hover">';
+        strTableData += '<thead>';
+        //strTableData += '<tr>';
+        strTableData += '<th>Line Number</th>';
+        strTableData += '<th>Todo Name</th>';
+        strTableData += '<th>Todo Date</th>';
+        strTableData += '<th>Todo Description</th>';
+        strTableData += '<th>Todo Priority</th>';
+        strTableData += '<th>Options</th>';
+
+        //strTableData += '</tr>'; 		
+        strTableData += '</thead>';
+
+
+
+        var table = document.create
+        var inputEl = document.createElement('input');
+        inputEl.type = 'button';
+        inputEl.value = "Click here";
+        inputEl.addEventListener('click', function() {
+            GFG_Fun('Parameter');
+        });
+        document.body.insertBefore(inputEl, down);
+        up.innerHTML = 'Click on button to pass the ' + 'string parameter to the function';
+
+        function GFG_Fun(parameter) {
+            down.innerHTML = "String '" + parameter + "' Received";
+        }
+
+
+        function tableInput(table) {
+
+        }
+    </script>
+</body>
+
+</html>

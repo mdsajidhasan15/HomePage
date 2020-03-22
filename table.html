@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Todo Table</title>
+</head>
+
+
+<body onload="showData()">
+    <form onsubmit="addData(); return false;">
+        <input type="text" id="id" placeholder="Enter your ID">
+        <br>
+        <input type="text" id="name" placeholder="Enter your Name">
+        <br>
+        <input type="Date" id="date" placeholder=" Enter Date">
+        <br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="clear">
+        <input type="button" value="Delete" onclick="deleteData();">
+    </form>
+
+    <table id="myTable" class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+    </table>
+    <script>
+        var arr = new Array();
+
+        function addData() {
+            getData();
+            arr.push({
+                id: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                date: document.getElementById("date").value
+            });
+
+            localStorage.setItem("localData", JSON.stringify([...arr]));
+            showData();
+        }
+
+        function getData() {
+            var str = localStorage.getItem("localData");
+            if (str != null) {
+                arr = [...JSON.parse(str)];
+            }
+
+        }
+
+        function deleteData() {
+            localStorage.clear();
+        }
+
+        function showData() {
+            getData()
+            var table = document.getElementById("myTable");
+
+            // var x = table.rows.length;
+            // while (--x) {
+            //     table.deleteRow(x);
+            // }
+
+            for (i = 0; i < arr.length; i++) {
+                var row = table.insertRow();
+
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                var cell3 = row.insertCell();
+
+                cell1.innerHTML = arr[i].id;
+                cell2.innerHTML = arr[i].name;
+                cell3.innerHTML = arr[i].date;
+            }
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
