@@ -292,26 +292,92 @@ function sortTable() {
     }
 }
 
-// function sort_table(td, cell, asc) {
-//     var rows = td.rows,
-//         rlen = rows.length,
-//         arr = new Array(),
-//         i, j, cells, clen;
-//     // fill the array with values from the table
-//     for (i = 0; i < rlen; i++) {
-//         cells = rows[i].cells;
-//         clen = cells.length;
-//         arr[i] = new Array();
-//         for (j = 0; j < clen; j++) {
-//             arr[i][j] = cells[j].innerHTML;
-//         }
-//     }
-//     // sort the array by the specified cellumn number (cell) and order (asc)
-//     arr.sort(function(a, b) {
-//         return (a[cell] == b[cell]) ? 0 : ((a[cell] > b[cell]) ? asc : -1 * asc);
-//     });
-//     // replace existing rows with new rows created from the sorted array
-//     for (i = 0; i < rlen; i++) {
-//         rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
-//     }
-// }
+function filterFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function sortTable() {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("myTable");
+    switching = true;
+    dir = "asc";
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[2];
+            y = rows[i + 1].getElementsByTagName("TD")[2];
+            if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount++;
+        } else {
+            if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
+}
+
+function edit_row(no) {
+    document.getElementById("edit_button" + no).style.display = "none";
+    document.getElementById("save_button" + no).style.display = "block";
+
+    var id = document.getElementById("id_row" + no);
+    var name = document.getElementById("name_row" + no);
+    var priority = document.getElementById("priority_row" + no);
+
+    var id_data = id.innerHTML;
+    var name_data = name.innerHTML;
+    var priority_data = priority.innerHTML;
+
+    id.innerHTML = "<input type='text' id='id" + no + "' value='" + id_data + "'>";
+    name.innerHTML = "<input type='text' id='name" + no + "' value='" + name_data + "'>";
+    priority.innerHTML = "<input type='text' id='priority" + no + "' value='" + priority_data + "'>";
+}
+
+function save_row(no) {
+    var id_val = document.getElementById("id" + no).value;
+    var name_val = document.getElementById("name" + no).value;
+    var priority_val = document.getElementById("priority" + no).value;
+
+    document.getElementById("id" + no).innerHTML = id_val;
+    document.getElementById("name" + no).innerHTML = name_val;
+    document.getElementById("priority" + no).innerHTML = priority_val;
+
+    document.getElementById("edit_button" + no).style.display = "block";
+    document.getElementById("save_button" + no).style.display = "none";
+}
+
+function delete_row(no) {
+    document.getElementById("row" + no + "").outerHTML = "";
+}
