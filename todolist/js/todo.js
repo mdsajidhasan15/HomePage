@@ -348,36 +348,36 @@ function sortTable() {
     }
 }
 
-function edit_row(no) {
-    document.getElementById("edit_button" + no).style.display = "none";
-    document.getElementById("save_button" + no).style.display = "block";
+// function edit_row(no) {
+//     document.getElementById("edit_button" + no).style.display = "none";
+//     document.getElementById("save_button" + no).style.display = "block";
 
-    var id = document.getElementById("id_row" + no);
-    var name = document.getElementById("name_row" + no);
-    var priority = document.getElementById("priority_row" + no);
+//     var id = document.getElementById("id_row" + no);
+//     var name = document.getElementById("name_row" + no);
+//     var priority = document.getElementById("priority_row" + no);
 
-    var id_data = id.innerHTML;
-    var name_data = name.innerHTML;
-    var priority_data = priority.innerHTML;
+//     var id_data = id.innerHTML;
+//     var name_data = name.innerHTML;
+//     var priority_data = priority.innerHTML;
 
-    id.innerHTML = "<input type='text' id='id" + no + "' value='" + id_data + "'>";
-    name.innerHTML = "<input type='text' id='name" + no + "' value='" + name_data + "'>";
-    priority.innerHTML = "<input type='text' id='priority" + no + "' value='" + priority_data + "'>";
-}
+//     id.innerHTML = "<input type='text' id='id" + no + "' value='" + id_data + "'>";
+//     name.innerHTML = "<input type='text' id='name" + no + "' value='" + name_data + "'>";
+//     priority.innerHTML = "<input type='text' id='priority" + no + "' value='" + priority_data + "'>";
+// }
 
-function save_row(no) {
-    var id_val = document.getElementById("id" + no).value;
-    var name_val = document.getElementById("name" + no).value;
-    var priority_val = document.getElementById("priority" + no).value;
+// function save_row(no) {
+//     var id_val = document.getElementById("id" + no).value;
+//     var name_val = document.getElementById("name" + no).value;
+//     var priority_val = document.getElementById("priority" + no).value;
 
-    document.getElementById("id" + no).innerHTML = id_val;
-    document.getElementById("name" + no).innerHTML = name_val;
-    document.getElementById("priority" + no).innerHTML = priority_val;
+//     document.getElementById("id" + no).innerHTML = id_val;
+//     document.getElementById("name" + no).innerHTML = name_val;
+//     document.getElementById("priority" + no).innerHTML = priority_val;
 
-    document.getElementById("edit_button" + no).style.display = "block";
-    document.getElementById("save_button" + no).style.display = "none";
-}
+//     document.getElementById("edit_button" + no).style.display = "block";
+//     document.getElementById("save_button" + no).style.display = "none";
+// }
 
-function delete_row(no) {
-    document.getElementById("row" + no + "").outerHTML = "";
-}
+// function delete_row(no) {
+//     document.getElementById("row" + no + "").outerHTML = "";
+// }
